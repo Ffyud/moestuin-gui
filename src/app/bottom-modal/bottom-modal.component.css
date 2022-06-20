@@ -1,0 +1,16 @@
+.bottom-modal {
+    background: #FFF;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    animation: bottom-show 200ms;
+    z-index: 999;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    box-shadow: 0px -10px 30px -20px #000;
+}
+
+@keyframes bottom-show {
+    0% { translate: 0% 100%;}
+    100% { translate: 0% 0%;}
+}
