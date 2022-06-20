@@ -1,0 +1,14 @@
+.garden-wrap {
+    text-align: center;
+
+}
+
+.garden-wrap .new-garden {
+    cursor: pointer;    
+    display: inline-block;
+    padding: 15px;
+    font-weight: 800;
+    background: green;
+    color: #FFF;
+    border-radius: 15px;
+}
