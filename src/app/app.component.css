@@ -1,0 +1,14 @@
+header {
+    text-align: center;
+
+}
+
+.wrap {
+
+
+}
+footer {
+    height: 100%;
+    position: sticky;
+    top: 0px;
+}
