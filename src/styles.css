@@ -1,7 +1,74 @@
+:root {
+    --main-color: rgb(9, 67, 7);
+}
+
 body, html {
     background: #FFF;
-    color: rgb(9, 67, 7);
+    color: var(--main-color);
     padding: 0px;
     margin: 0px;
     height: 100%;
+}
+
+.bottom-modal {
+    background: #FFF;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    animation: bottom-show 200ms;
+    z-index: 999;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    box-shadow: 0px 0px 30px -20px #000;
+}
+
+@keyframes bottom-show {
+    0% { translate: 0% 100%;}
+    100% { translate: 0% 0%;}
+}
+
+.bottom-modal input[type=text] {
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    width: calc(100% - 40px);
+    box-shadow: inset 0px 0px 0px 2px var(--main-color);
+}
+
+.bottom-modal button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: var(--main-color);
+    color: #FFF;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    width: calc(100% - 20px);
+}
+
+.bottom-modal .title {
+    padding: 15px 5px 5px 5px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.2em;
+}
+.bottom-modal .sub-title {
+    color: #666;
+    text-align: center;
+    font-weight: 300;
+    padding: 0px 15px 15px 15px;
+}
+
+.btn {
+    cursor: pointer;
+    background: var(--main-color);
+    color: #fff;
+    padding: 10px 15px 10px 15px;
+    border-radius: 8px;
+    font-weight: 300;
+    margin: 10px;
+    display: inline-block;
 }
