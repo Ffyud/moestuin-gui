@@ -9,8 +9,16 @@ export class GardenComponent implements OnInit {
 
   constructor() { }
 
-  createGarden() {
+  isShow = true;
+  newGardenMade = false;
+
+  toggleDisplay() {
     console.log("Maak nieuwe tuin!")
+    this.isShow = !this.isShow;
+  }
+
+  newGardenSubmitted() {
+    this.toggleDisplay();
   }
 
   ngOnInit(): void {

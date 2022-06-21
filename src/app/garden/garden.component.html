@@ -1,7 +1,5 @@
 <div class="garden-wrap">
-    <div class="garden">
-        <div class="new-garden">
-            <span (click)="createGarden()">Maak een tuin</span>
-          </div>
-    </div>
+    <span class="btn" (click)="toggleDisplay()">Maak een tuin</span>
+    <span routerLink="/mijn-tuin" class="btn">Bekijk mijn tuin</span>
 </div>
+<app-new-garden-form (savingIsDone)="newGardenSubmitted()" [hidden]="isShow"></app-new-garden-form>

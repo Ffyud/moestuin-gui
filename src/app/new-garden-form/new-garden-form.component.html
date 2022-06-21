@@ -1,0 +1,28 @@
+<div class="bottom-modal">
+    <div class="title">Start een tuin</div>
+    <div class="sub-title">Geef je tuin een naam en kies het formaat.</div>
+    <form>
+        <input type="text" [(ngModel)]="garden.name" name="name" placeholder="Naam van je tuin...">
+        <select [(ngModel)]="garden.dimensionY" name="dimensionY" >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+        <select [(ngModel)]="garden.dimensionX" name="dimensionX" >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+        <button (click)="saveNewGarden()">Start</button>
+    </form>
+</div>

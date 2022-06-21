@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BottomModalComponent } from './bottom-modal.component';
+import { NewGardenFormComponent } from './new-garden-form.component';
 
-describe('BottomModalComponent', () => {
-  let component: BottomModalComponent;
-  let fixture: ComponentFixture<BottomModalComponent>;
+describe('NewGardenFormComponent', () => {
+  let component: NewGardenFormComponent;
+  let fixture: ComponentFixture<NewGardenFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BottomModalComponent ]
+      declarations: [ NewGardenFormComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BottomModalComponent);
+    fixture = TestBed.createComponent(NewGardenFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
