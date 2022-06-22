@@ -1,0 +1,8 @@
+<div class="garden">
+    <span class="garden-name">{{ garden.name }}</span>
+    <ul *ngFor="let x of [].constructor(garden.dimensionX); let i = index">
+        <li class="garden-element" *ngFor="let y of [].constructor(garden.dimensionY); let z = index">
+            <span >{{ i }} {{ z }}</span>
+        </li>
+    </ul>
+</div>
