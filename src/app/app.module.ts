@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { GardenComponent } from './garden/garden.component';
 import { HeaderComponent } from './header/header.component';
 import { NewGardenFormComponent } from './new-garden-form/new-garden-form.component';
-import { MyGardenComponent } from './my-garden/my-garden.component';
+import { MyGardenGridComponent } from './my-garden-grid/my-garden-grid.component';
+import { NewGardenContentFormComponent } from './new-garden-content-form/new-garden-content-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MyGardenComponent } from './my-garden/my-garden.component';
     GardenComponent,
     HeaderComponent,
     NewGardenFormComponent,
-    MyGardenComponent
+    MyGardenGridComponent,
+    NewGardenContentFormComponent
   ],
   imports: [
     BrowserModule,
