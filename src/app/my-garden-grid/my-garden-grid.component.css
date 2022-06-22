@@ -2,8 +2,7 @@
 .garden {
     border-radius: 8px;
     margin: 10px;
-    box-shadow: 0px 0px 0px 1px #CCC;
-    overflow: hidden;
+
 }
 
 .garden-name {
@@ -11,24 +10,30 @@
     text-align: center;
     display: block;
     padding: 5px 15px 5px 15px;
-    box-shadow: 0px 1px 0px 0px #CCC;
 }
 
 .garden ul {
     width: 100%;
+    overflow: hidden;
     list-style-type: none;
     padding: 0px;
     margin: 0px;
     display: table;
 }
-
-.garden li.garden-element {
-    box-shadow: 0px 1px 0px 0px #CCC, 1px 0px 0px 0px #CCC;
-    padding-bottom: 20%;
-    cursor: pointer;
+.garden li {
     display: table-cell;
+
 }
 
-.garden li.garden-element:hover {
+.garden li .garden-element {
     background: #CCC;
+    border-radius: 15px;
+    margin: 1px;
+    padding-bottom: 100%;
+    cursor: pointer;
+
+}
+
+.garden li .garden-element:hover {
+    background: #222;
 }
