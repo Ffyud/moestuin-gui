@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MyGardenComponent } from './my-garden/my-garden.component';
+import { MyGardenGridComponent } from './my-garden-grid/my-garden-grid.component';
 
 const routes: Routes = [
-  { path: 'mijn-tuin', component: MyGardenComponent}
+  { path: 'mijn-tuin', component: MyGardenGridComponent}
 ];
 
 @NgModule({
