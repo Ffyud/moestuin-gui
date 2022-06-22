@@ -10,8 +10,7 @@ export class GardenService {
   constructor(public http: HttpClient) { }
 
   getGarden(id: number) {
-
-    let params = new HttpParams().set("id", id);
+    let params = new HttpParams().set('id', id);
     return this.http.get('http://localhost:8080/garden', {params: params});
   }
 
