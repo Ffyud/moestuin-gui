@@ -11,18 +11,30 @@ export class MyGardenGridComponent implements OnInit {
 
   garden!: Garden;
 
+  isShowModalContent = true;
+  dimensionX = 0;
+  dimensionY = 0;
+
   constructor(public gardenService: GardenService) { }
 
   createGridArray(x: number, y: number) {
-    console.log("dimensie X: " + x);
-    console.log("dimensie Y: " + y);
+    console.log("Aantal vaken breed: " + y);
+    console.log("Aantal vakken hoog: " + x);
+  }
+  
+  toggleDisplayGardenContentModal(x: number, y:number) {
+    console.log("Kies een groente voor vak " + x + ", " + y)
+    this.dimensionX = x;
+    this.dimensionY = y;
+    this.isShowModalContent = !this.isShowModalContent;
   }
 
   ngOnInit(): void {
-    this.gardenService.getGarden(3).subscribe(
+
+    this.gardenService.getGarden(1).subscribe(
       data => {
-        this.garden = JSON.parse(JSON.stringify(data));
-        this.createGridArray(5, 4); // FIXME use returned dimensions
+        this.garden = data;
+        this.createGridArray(data.dimensionX, data.dimensionY);
       }
     );  
 
