@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Garden } from './garden';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,8 @@ export class GardenService {
 
   constructor(public http: HttpClient) { }
 
-  getGarden(id: number) {
-    return this.http.get('http://localhost:8080/garden/' + id);
+  getGarden(id: number): Observable<Garden> {
+    return this.http.get<Garden>('http://localhost:8080/garden/' + id);
   }
 
   save(garden: Garden) {
