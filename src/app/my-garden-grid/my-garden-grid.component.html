@@ -2,10 +2,13 @@
     <span class="garden-name">{{ garden.name }}</span>
     <ul *ngFor="let x of [].constructor(garden.dimensionX); let i = index">
         <li *ngFor="let y of [].constructor(garden.dimensionY); let z = index">
-            <div (click)="toggleDisplayGardenContentModal(i, z)" class="garden-element">{{ i }} {{ z }}</div>
+            <div (click)="toggleDisplayGardenContentModal(i, z)" class="garden-element {{ elementHasContent(i,z) }}">
+                
+            </div>
         </li>
     </ul>
 </div>
+<app-my-garden-overview></app-my-garden-overview>
 <app-new-garden-content-form 
     [gridLocationX]="dimensionX"
     [gridLocationY]="dimensionY"
