@@ -4,121 +4,12 @@
 
     <div class="select-plant">
         <ul>
-            <li>
+            <li *ngFor="let p of plants" (click)="saveNewPlant(p.id)">
                 <div class="plant">
                     <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
-                </div>
-            </li>
-            <li>
-                <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">Aardappel</div>
+                   <div class="plant-title">{{ p.name }}</div>
                 </div>
             </li>
         </ul>
     </div>
-    <form>
-        <!-- <select name="plantKind" >
-            <option value="1">Aardappel</option>
-            <option value="2">Brocolli</option>
-            <option value="3">Sperziebonen</option>
-            <option value="4">Courgette</option>
-            <option value="5">Komkommer</option>
-            <option value="6">Tomaat</option>
-            <option value="7">Prei</option>
-            <option value="8">Pompoen</option>
-        </select> -->
-        <button (click)="saveNewPlant()">Voeg toe</button>
-    </form>
 </div>

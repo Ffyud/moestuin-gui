@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Plant } from '../plant';
+import { PlantService } from '../plant.service';
 
 @Component({
   selector: 'app-new-garden-content-form',
@@ -7,7 +9,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NewGardenContentFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(public plantService: PlantService) { }
+
+  plants!: Plant[];
 
   @Input()
   gridLocationX!: number;
@@ -15,13 +19,19 @@ export class NewGardenContentFormComponent implements OnInit {
   @Input()
   gridLocationY!: number;
 
-  saveNewPlant() {
+  saveNewPlant(plantId: number) {
     // TODO save actie voor jiuste coordinaten
     // TODO event terug emitten om dialoog te sluiten
-    console.log("nieuwe plant ")
+    console.log("Plant met id " + plantId + " opslaan voor locatie " +this.gridLocationX + ", " + this.gridLocationY)
   }
 
   ngOnInit(): void {
+    this.plantService.getPlants().subscribe(
+      data => { 
+        this.plants = data;
+        console.log(data)
+       }
+    );
   }
 
 }

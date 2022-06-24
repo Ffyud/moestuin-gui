@@ -1,5 +1,7 @@
 .select-plant {
     overflow-x: scroll;
+    margin-bottom: 15px;
+    padding: 0px 0px 0px 10px;
 }
 .select-plant ul{
     white-space: nowrap;
@@ -11,19 +13,21 @@
 
 .select-plant li {
     display: inline-block;
-
+}
+.select-plant li:last-child {
+    padding: 0px 10px 0px 0px;
 }
 .select-plant li .plant {
     cursor: pointer;
     padding: 5px 0px 10px 0px;
-    margin: 5px;
+    margin: 0px 5px 0px 5px;
     border-radius: 8px;
     width: 80px;
     height: 90px;
     text-align: center;
-    background: #FFF;
-    box-shadow: 0px -1px 0px 0px #00000036, 0px 1px 1px 1px #00000036;
+    background: #F2F2F2;
 }
+
 .select-plant li .plant .plant-title {
     color: #999;
     font-size: .9em;
