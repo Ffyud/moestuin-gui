@@ -15,8 +15,9 @@ export class GardenService {
     return this.http.get<Garden>('http://localhost:8080/garden/' + id);
   }
 
-  getGardenContent(id: number): Observable<GardenContent> {
-    return this.http.get<GardenContent>('http://localhost:8080/gardencontent/garden/' + id);
+  // Hoort misschien in aparte gardenContent service
+  getGardenContent(id: number): Observable<GardenContent[]> {
+    return this.http.get<GardenContent[]>('http://localhost:8080/gardencontent/garden/' + id);
   }
 
   save(garden: Garden) {
