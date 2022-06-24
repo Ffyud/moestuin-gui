@@ -22,18 +22,24 @@
 }
 .garden li {
     display: table-cell;
-
 }
 
 .garden li .garden-element {
-    background: #55360E;
-    border-radius: 5px;
-    margin: 1px;
+    border-radius: 8px;
+    margin: 5px;
     padding-bottom: 100%;
     cursor: pointer;
-
+    background: #F2F2F2;
 }
 
 .garden li .garden-element:hover {
     background: #222;
+}
+
+.garden li .garden-element.hasPlant {
+    background: green;
+}
+.garden li .garden-element.hasNone {
+    background: #F2F2F2;
+
 }
