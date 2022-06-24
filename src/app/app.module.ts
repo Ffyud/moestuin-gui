@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { NewGardenFormComponent } from './new-garden-form/new-garden-form.component';
 import { MyGardenGridComponent } from './my-garden-grid/my-garden-grid.component';
 import { NewGardenContentFormComponent } from './new-garden-content-form/new-garden-content-form.component';
+import { MyGardenOverviewComponent } from './my-garden-overview/my-garden-overview.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NewGardenContentFormComponent } from './new-garden-content-form/new-gar
     HeaderComponent,
     NewGardenFormComponent,
     MyGardenGridComponent,
-    NewGardenContentFormComponent
+    NewGardenContentFormComponent,
+    MyGardenOverviewComponent
   ],
   imports: [
     BrowserModule,
