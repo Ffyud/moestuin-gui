@@ -1,0 +1,40 @@
+.garden {
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.garden-header {
+    background: #FFF;
+    text-align: center;
+    display: block;
+    padding: 5px 15px 5px 15px;
+}
+
+.garden-overview {
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px;
+}
+
+ul.calendar {
+    list-style-type: none;
+    overflow-x: scroll;
+    margin: 0px;
+    padding: 5px 0px 5px 0px;
+    white-space: nowrap;
+
+}
+ul.calendar li {
+    display: inline-block;
+    height: 20px;
+    width: 40px;
+    background: #FFF;
+    border-radius: 8px;
+    font-size: .8em;
+    color: #666;
+    text-align: center;
+    line-height: 20px;
+}
+ul.calendar li.zaai { color: #FFF; background: blue;}
+ul.calendar li.grond { color: #FFF; background: orange;}
+ul.calendar li.oogst { color: #FFF; background: green;}
