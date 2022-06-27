@@ -1,9 +1,12 @@
+<span *ngIf="garden.name !== undefined" class="garden-name">{{ garden.name }}</span>
 <div class="garden">
-    <span class="garden-name">{{ garden.name }}</span>
     <ul *ngFor="let x of [].constructor(garden.dimensionX); let i = index">
         <li *ngFor="let y of [].constructor(garden.dimensionY); let z = index">
-            <div (click)="toggleDisplayGardenContentModal(i, z)" class="garden-element {{ elementHasContent(i,z) }}">
-                
+            <div (click)="toggleDisplayGardenContentModal(i, z)" class="garden-element">
+                <div class="plant-title">{{ elementHasContent(i,z)?.name }}</div>
+                <div class="plant-icon">
+                    <img src='assets/svg/adjuma-pepper.svg'/>
+                </div> 
             </div>
         </li>
     </ul>
@@ -12,5 +15,6 @@
 <app-new-garden-content-form 
     [gridLocationX]="dimensionX"
     [gridLocationY]="dimensionY"
-     *ngIf="isShowModalContent!=null" 
-    [hidden]="isShowModalContent"></app-new-garden-content-form>
+    *ngIf="isShowModalContent!=null" 
+    [hidden]="isShowModalContent" 
+    (savingIsDone)="newGardenContentSubmitted()"></app-new-garden-content-form>

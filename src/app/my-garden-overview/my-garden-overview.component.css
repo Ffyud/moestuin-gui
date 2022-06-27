@@ -5,15 +5,20 @@
 
 .garden-header {
     background: #FFF;
-    text-align: center;
+    color: #000;
     display: block;
-    padding: 5px 15px 5px 15px;
+    padding: 0px 15px 0px 15px;
+    font-size: 1.3em;
 }
 
 .garden-overview {
     list-style-type: none;
     margin: 0px;
     padding: 10px;
+}
+
+.overview-plant-title {
+    padding: 0px 5px 0px 5px;
 }
 
 ul.calendar {

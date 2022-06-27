@@ -2,14 +2,15 @@
 .garden {
     border-radius: 8px;
     margin: 10px;
-
+    overflow-x: scroll;
 }
 
 .garden-name {
     background: #FFF;
-    text-align: center;
+    color: #000;
     display: block;
-    padding: 5px 15px 5px 15px;
+    padding: 0px 15px 0px 15px;
+    font-size: 1.3em;
 }
 
 .garden ul {
@@ -19,27 +20,39 @@
     padding: 0px;
     margin: 0px;
     display: table;
+    table-layout:fixed;
 }
 .garden li {
     display: table-cell;
+    width: 1%;
 }
 
 .garden li .garden-element {
     border-radius: 8px;
-    margin: 5px;
-    padding-bottom: 100%;
+    margin: 2px;
+    padding: 5px;
+    height: 90px;
     cursor: pointer;
-    background: #F2F2F2;
+    background: #FFF;
+    box-shadow: inset 0px 0px 0px 2px #000;
+    overflow: hidden;
 }
 
 .garden li .garden-element:hover {
     background: #222;
 }
 
-.garden li .garden-element.hasPlant {
-    background: green;
+.garden-element .plant-title {
+    color: #000;
+    text-align: center;
+    font-weight: 800;
 }
-.garden li .garden-element.hasNone {
-    background: #F2F2F2;
-
+.garden-element .plant-icon {
+    position: relative;
+}
+.garden-element .plant-icon img {
+    position: absolute;
+    height: 70px;
+    left: calc(50% - 34px);
+    width: 68px;
 }
