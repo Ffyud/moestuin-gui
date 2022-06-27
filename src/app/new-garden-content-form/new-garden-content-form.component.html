@@ -6,8 +6,8 @@
         <ul>
             <li *ngFor="let p of plants" (click)="saveNewPlant(p.id)">
                 <div class="plant">
-                    <div class="plant-icon">🥔</div>
-                   <div class="plant-title">{{ p.name }}</div>
+                    <div class="plant-title">{{ p.name }}</div>
+                    <div class="plant-icon"><img src='assets/svg/adjuma-pepper.svg'/></div>
                 </div>
             </li>
         </ul>

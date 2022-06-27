@@ -19,26 +19,30 @@
 }
 .select-plant li .plant {
     cursor: pointer;
-    padding: 5px 0px 10px 0px;
+    padding: 5px 10px 10px 10px;
     margin: 0px 5px 0px 5px;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 80px;
     height: 90px;
     text-align: center;
-    background: #F2F2F2;
+    background: #FFF;
+    position: relative;
+    box-shadow: inset 0px 0px 0px 2px #000;
 }
 
 .select-plant li .plant .plant-title {
-    color: #999;
-    font-size: .9em;
-}
-.select-plant li .plant .plant-icon {
+    color: #000;
     text-align: center;
-    line-height: 40px;
-    width: 40px;
-    height: 40px;
-    border-radius: 100px;
-    margin: 0px auto;
-    background: #c0e1c0;
-    margin: 10px auto;
+    font-weight: 800;
+}
+
+.select-plant li .plant .plant-icon {
+    position: relative;
+}
+
+.select-plant li .plant .plant-icon img {
+    position: absolute;
+    height: 70px;
+    left: calc(50% - 34px);
+    width: 68px;
 }
