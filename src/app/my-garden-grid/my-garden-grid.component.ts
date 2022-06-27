@@ -20,17 +20,22 @@ export class MyGardenGridComponent implements OnInit {
   constructor(public gardenService: GardenService) { }
 
   createGridArray(x: number, y: number) {
-    console.log("Aantal vaken breed: " + y);
+    console.log("Aantal vakken breed: " + y);
     console.log("Aantal vakken hoog: " + x);
   }
 
   elementHasContent(x: number, y: number) {
-    console.log("check wat op plek " + x + ", " + y + " staat: ")
-    const returnvalue = this.gardenContentArray.find(element => element.positionX == x && element.positionY == y);
-    if(returnvalue !== undefined) {
-      return "hasPlant"
+    console.log("check content van blok" + x + " " + y)
+    if(this.gardenContentArray !== undefined) {
+      const returnvalue = this.gardenContentArray.find(element => element.positionX == x && element.positionY == y);
+      if(returnvalue !== undefined) {
+        console.log(returnvalue.plant.name)
+        return returnvalue.plant;
+      } else {
+        return null;
+      }
     } else {
-      return "hasNone"; // niet gevonden
+      return null;
     }
   }
   
@@ -41,7 +46,16 @@ export class MyGardenGridComponent implements OnInit {
     this.isShowModalContent = !this.isShowModalContent;
   }
 
+  newGardenContentSubmitted() {
+    this.isShowModalContent = true;
+    this.getGardenAndGardenContent();
+  }
+  
   ngOnInit(): void {
+    this.getGardenAndGardenContent();
+  }
+
+  private getGardenAndGardenContent() {
     let gardenId = 1;
     this.gardenService.getGarden(gardenId).subscribe(
       data => {
@@ -49,16 +63,11 @@ export class MyGardenGridComponent implements OnInit {
         this.createGridArray(data.dimensionX, data.dimensionY);
       }
     );
-    
+
     this.gardenService.getGardenContent(gardenId).subscribe(
       data => {
         this.gardenContentArray = data;
-        console.log("Gardencontent: ") 
-        console.log(this.gardenContentArray)
-        // FIXME gardencontent moet in dat model geduwt worden
       }
     );
-
   }
-
 }
