@@ -14,12 +14,26 @@
 .garden-overview {
     list-style-type: none;
     margin: 0px;
-    padding: 10px;
+    padding: 0px;
+}
+
+
+.overview-plant {
+    padding: 10px 10px 0px 10px;
+
+}
+
+.garden-overview img {
+    width: 25px;
+    display:inline-block;
 }
 
 .overview-plant-title {
+    display: inline-block;
     font-weight: 800;
     padding: 0px 5px 0px 5px;
+    line-height: 25px;
+    vertical-align: top;
 }
 
 ul.calendar {
@@ -32,14 +46,33 @@ ul.calendar {
 
 ul.calendar li {
     display: inline-block;
-    height: 20px;
+    height: 30px;
     width: 40px;
     background: #FFF;
-    border-radius: 8px;
+    box-shadow: inset 2px 0px 0px 0px #000,
+        inset 0px -2px 0px 0px #000,
+        inset 0px 2px 0px 0px #000;
     font-size: .8em;
-    color: #666;
+    color: #000;
     text-align: center;
-    line-height: 20px;
+    font-weight: 800;
+    line-height: 30px;
+}
+
+ul.calendar li:first-child {
+    margin: 0px 0px 0px 10px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+ul.calendar li:last-child {
+    margin: 0px 10px 0px 0px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: inset 2px 0px 0px 0px #000,
+    inset -2px 0px 0px 0px #000,
+    inset 0px -2px 0px 0px #000,
+    inset 0px 2px 0px 0px #000;
 }
 
 ul.calendar li.zaai { color: #FFF; background: blue;}
