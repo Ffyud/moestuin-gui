@@ -24,7 +24,7 @@
 }
 .garden li {
     display: table-cell;
-    width: 1%;
+    vertical-align: top;
 }
 
 .garden li .garden-element {
@@ -46,6 +46,7 @@
     color: #000;
     text-align: center;
     font-weight: 800;
+    font-size: .8em;
 }
 .garden-element .plant-icon {
     position: relative;
