@@ -24,7 +24,7 @@ export class MyGardenGridComponent implements OnInit {
     console.log("Aantal vakken hoog: " + x);
   }
 
-  elementHasContent(x: number, y: number) {
+  getBlockPlantContent(x: number, y: number) {
     console.log("check content van blok" + x + " " + y)
     if(this.gardenContentArray !== undefined) {
       const returnvalue = this.gardenContentArray.find(element => element.positionX == x && element.positionY == y);
