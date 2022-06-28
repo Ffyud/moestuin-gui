@@ -24,12 +24,11 @@ export class MyGardenGridComponent implements OnInit {
     console.log("Aantal vakken hoog: " + x);
   }
 
-  getBlockPlantContent(x: number, y: number) {
-    console.log("check content van blok" + x + " " + y)
+  // FIXME wordt te vaak gebruikt
+  getBlockPlantContent(x: number, y: number) { 
     if(this.gardenContentArray !== undefined) {
       const returnvalue = this.gardenContentArray.find(element => element.positionX == x && element.positionY == y);
       if(returnvalue !== undefined) {
-        console.log(returnvalue.plant.name)
         return returnvalue.plant;
       } else {
         return null;
