@@ -38,10 +38,6 @@
     overflow: hidden;
 }
 
-.garden li .garden-element:hover {
-    background: #222;
-}
-
 .garden-element .plant-title {
     color: #000;
     text-align: center;
