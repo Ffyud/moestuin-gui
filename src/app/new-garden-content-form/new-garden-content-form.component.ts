@@ -41,14 +41,18 @@ export class NewGardenContentFormComponent implements OnInit {
     this.gardenContent.positionX = this.gridLocationX;
     this.gardenContent.positionY = this.gridLocationY;
 
-    console.log(this.gardenContent.positionX)
-    console.log(this.gardenContent.positionY)
-    console.log(this.gardenContent.plant.id)
-
-    this.gardenService.saveGardenContent(this.gardenContent).subscribe(
-       data => { this.savingIsDone.emit(true); }
-    );
-    
+    this.gardenService.deleteGardenContent(this.garden.id, this.gardenContent.positionX, 
+      this.gardenContent.positionY).subscribe(
+        e => {
+          console.log("Verwijderen van oude gardenContent gelukt.");
+          this.gardenService.saveGardenContent(this.gardenContent).subscribe(
+            data => { 
+              console.log("Opslaan van nieuwe gardenContent gelukt.");
+              this.savingIsDone.emit(true); 
+            }
+         );
+        }
+      ); 
   }
 
   @Output() savingIsDone = new EventEmitter<boolean>();
@@ -60,5 +64,4 @@ export class NewGardenContentFormComponent implements OnInit {
        }
     );
   }
-
 }
