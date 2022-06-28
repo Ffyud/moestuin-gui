@@ -7,9 +7,7 @@
                 <div *ngIf="getBlockPlantContent(i,z)?.icon !== null" class="plant-icon">
                     <img src='assets/svg/{{ getBlockPlantContent(i,z)?.icon }}.svg'/>
                 </div> 
-                <div *ngIf="getBlockPlantContent(i,z)?.icon === null" class="plant-icon">
-                    <img src='assets/svg/generic-plant.svg'/>
-                </div> 
+
             </div>
         </li>
     </ul>
