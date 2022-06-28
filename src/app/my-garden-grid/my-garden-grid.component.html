@@ -3,9 +3,12 @@
     <ul *ngFor="let x of [].constructor(garden.dimensionX); let i = index">
         <li *ngFor="let y of [].constructor(garden.dimensionY); let z = index">
             <div (click)="toggleDisplayGardenContentModal(i, z)" class="garden-element">
-                <div class="plant-title">{{ elementHasContent(i,z)?.name }}</div>
-                <div class="plant-icon">
-                    <img src='assets/svg/adjuma-pepper.svg'/>
+                <div class="plant-title">{{ getBlockPlantContent(i,z)?.name }}</div>
+                <div *ngIf="getBlockPlantContent(i,z)?.icon !== null" class="plant-icon">
+                    <img src='assets/svg/{{ getBlockPlantContent(i,z)?.icon }}.svg'/>
+                </div> 
+                <div *ngIf="getBlockPlantContent(i,z)?.icon === null" class="plant-icon">
+                    <img src='assets/svg/generic-plant.svg'/>
                 </div> 
             </div>
         </li>

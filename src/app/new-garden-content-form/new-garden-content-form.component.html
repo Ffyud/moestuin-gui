@@ -7,7 +7,8 @@
             <li *ngFor="let p of plants" (click)="saveNewPlant(p.id)">
                 <div class="plant">
                     <div class="plant-title">{{ p.name }}</div>
-                    <div class="plant-icon"><img src='assets/svg/adjuma-pepper.svg'/></div>
+                    <div *ngIf="p.icon !== null" class="plant-icon"><img src='assets/svg/{{p.icon}}.svg'/></div>
+                    <div *ngIf="p.icon === null" class="plant-icon"><img src='assets/svg/generic-plant.svg'/></div>
                 </div>
             </li>
         </ul>
