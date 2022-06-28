@@ -7,9 +7,9 @@
         </div>
         <ul class="calendar">
             <li *ngFor="let month of monthsOfYear; let i = index;"
-             [ngClass]="{'zaai' : getMonthActionSeed(content.plant.seedPeriod, i+1)}" 
-             [ngClass]="{'grond' : getMonthActionGround(content.plant.plantPeriod, i+1)}" 
-             [ngClass]="{'oogst' : getMonthActionHarvest(content.plant.harvestPeriod, i+1)}">
+             [class.zaai]="getMonthActionSeed(content.plant.seedPeriod, i+1)" 
+             [class.grond]="getMonthActionGround(content.plant.plantPeriod, i+1)" 
+             [class.oogst]="getMonthActionHarvest(content.plant.harvestPeriod, i+1)">
                 {{month}}
             </li>
         </ul>   
