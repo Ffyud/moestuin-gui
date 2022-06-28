@@ -1,22 +1,17 @@
 <span class="garden-header">Overzicht</span>
 <ul class="garden-overview">
-    <li>
-        <div class="overview-plant-title">Aardappel</div>
+    <li  *ngFor="let content of gardenContentArray">
+        <div class="overview-plant">
+            <img src='assets/svg/{{ content.plant.icon }}.svg'/>
+            <div class="overview-plant-title">{{content.plant.name}}</div>
+        </div>
         <ul class="calendar">
-            <li>jan</li>
-            <li class="zaai">feb</li>
-            <li class="zaai">mrt</li>
-            <li class="grond">apr</li>
-            <li class="grond">jun</li>
-            <li>jul</li>
-            <li class="grond">aug</li>
-            <li class="oogst">sep</li>
-            <li class="oogst">okt</li>
-            <li>nov</li>
-            <li>dec</li>
-        </ul>
-    
+            <li *ngFor="let month of monthsOfYear; let i = index;"
+             [ngClass]="{'zaai' : getMonthActionSeed(content.plant.seedPeriod, i+1)}" 
+             [ngClass]="{'grond' : getMonthActionGround(content.plant.plantPeriod, i+1)}" 
+             [ngClass]="{'oogst' : getMonthActionHarvest(content.plant.harvestPeriod, i+1)}">
+                {{month}}
+            </li>
+        </ul>   
     </li>
-    <li>Aardappel</li>
-
 </ul>
