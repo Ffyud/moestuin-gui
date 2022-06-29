@@ -4,6 +4,11 @@
 
     <div class="select-plant">
         <ul>
+            <li (click)="saveEmpty()">
+                <div class="plant">
+                    leeg
+                </div>
+            </li>
             <li *ngFor="let p of plants" (click)="saveNewPlant(p.id)">
                 <div class="plant">
                     <div class="plant-title">{{ p.name }}</div>
