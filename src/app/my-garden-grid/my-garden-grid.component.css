@@ -50,6 +50,6 @@
 .garden-element .plant-icon img {
     position: absolute;
     height: 70px;
-    left: calc(50% - 34px);
-    width: 68px;
+    left: calc(50% - 25px);
+    width: 50px;
 }

@@ -50,8 +50,9 @@ ul.calendar li {
     width: 40px;
     background: #FFF;
     box-shadow: inset 2px 0px 0px 0px #000,
-        inset 0px -2px 0px 0px #000,
-        inset 0px 2px 0px 0px #000;
+                inset 0px -2px 0px 0px #000,
+                inset 0px 2px 0px 0px #000,
+                inset 0px 3px 0px 0px #FFFFFF47;
     font-size: .8em;
     color: #000;
     text-align: center;
@@ -75,6 +76,6 @@ ul.calendar li:last-child {
     inset 0px 2px 0px 0px #000;
 }
 
-ul.calendar li.zaai { color: #FFF; background: blue;}
-ul.calendar li.grond { color: #FFF; background: orange;}
-ul.calendar li.oogst { color: #FFF; background: green;}
+ul.calendar li.zaai { text-shadow: 1px 1px #0000009c; color: #FFF; background: blue;}
+ul.calendar li.grond { text-shadow: 1px 1px #0000009c; color: #FFF; background: orange;}
+ul.calendar li.oogst { text-shadow: 1px 1px #0000009c; color: #FFF; background: green;}
