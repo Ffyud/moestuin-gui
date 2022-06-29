@@ -5,8 +5,8 @@
     <div class="select-plant">
         <ul>
             <li (click)="saveEmpty()">
-                <div class="plant">
-                    leeg
+                <div class="plant small">
+                    <div class="plant-title">leeg</div>
                 </div>
             </li>
             <li *ngFor="let p of plants" (click)="saveNewPlant(p.id)">
