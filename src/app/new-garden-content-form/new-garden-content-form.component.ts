@@ -25,6 +25,24 @@ export class NewGardenContentFormComponent implements OnInit {
   @Input()
   gridLocationY!: number;
 
+  saveEmpty() {
+    this.gardenContent = new GardenContent();
+    this.plant = new Plant();
+    this.garden = new Garden();
+
+    this.garden.id = 1; // FIXME rofl hardcoded
+    this.gardenContent.positionX = this.gridLocationX;
+    this.gardenContent.positionY = this.gridLocationY;
+
+    this.gardenService.deleteGardenContent(this.garden.id, this.gardenContent.positionX, 
+      this.gardenContent.positionY).subscribe(
+        e => {
+          console.log("Verwijder inhoud op " + this.gridLocationX + ", " + this.gridLocationY + " gelukt.");
+          this.savingIsDone.emit(true); 
+        }
+      ); 
+  }
+
   saveNewPlant(plantId: number) {
     console.log("Plant met id " + plantId + " opslaan voor locatie " +this.gridLocationX + ", " + this.gridLocationY)
 
