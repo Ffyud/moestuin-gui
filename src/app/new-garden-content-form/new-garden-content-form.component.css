@@ -30,6 +30,12 @@
     box-shadow: inset 0px 0px 0px 2px #000;
 }
 
+.select-plant li .plant.small {
+    width: 40px;
+}
+.select-plant li .plant.small .plant-title { color: #a4a4a4;}
+
+
 .select-plant li .plant .plant-title {
     color: #000;
     text-align: center;
