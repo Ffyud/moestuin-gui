@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { GardenService } from '../garden.service';
 import { GardenContent } from '../gardencontent';
+import { of, pipe } from 'rxjs';
+import { distinct } from 'rxjs/operators';
+import { Plant } from '../plant';
+import { PlantService } from '../plant.service';
 
 @Component({
   selector: 'app-my-garden-overview',
@@ -12,13 +16,14 @@ export class MyGardenOverviewComponent implements OnInit {
   gardenContentArray!: GardenContent[];
   monthsOfYear: Array<String> = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul",
     "aug", "sep", "okt", "nov", "dec"];
+
+  currentMonth: number = new Date().getMonth() + 1;
   
   constructor(private gardenService: GardenService) { }
 
-  // TODO maak van een string een array
-
   getMonthActionSeed(seedPeriod: string, monthIndex: number) {
-    if(seedPeriod.includes(monthIndex.toString())) {
+    let seedPeriodArray = seedPeriod.split(",");
+    if(seedPeriodArray.includes(monthIndex.toString())) {
       return true;
     } else {
       return false;
@@ -26,7 +31,8 @@ export class MyGardenOverviewComponent implements OnInit {
   }
 
   getMonthActionGround(plantPeriod: string, monthIndex: number) {
-    if(plantPeriod.includes(monthIndex.toString())) {
+    let plantPeriodArray = plantPeriod.split(",");
+    if(plantPeriodArray.includes(monthIndex.toString())) {
       return true;
     } else {
       return false;
@@ -34,7 +40,16 @@ export class MyGardenOverviewComponent implements OnInit {
   }
 
   getMonthActionHarvest( harvestPeriod: string, monthIndex: number) {
-    if(harvestPeriod.includes(monthIndex.toString())) {
+    let harvestPeriodArray = harvestPeriod.split(",");
+    if(harvestPeriodArray.includes(monthIndex.toString())) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  getMonthCurrent(monthIndex: number) {
+    if(monthIndex === this.currentMonth) {
       return true;
     } else {
       return false;
@@ -44,8 +59,15 @@ export class MyGardenOverviewComponent implements OnInit {
   gardenId: number = 1; // FIXME hardcoded gardenId lol wut
   
   ngOnInit(): void {
-    this.gardenService.getGardenContent(this.gardenId).subscribe(
-      data => { this.gardenContentArray = data; }
+    this.gardenService.getGardenContent(this.gardenId)
+    .pipe(
+      // object simpeler maken?
+      distinct()
+    )
+    .subscribe(
+      data => { 
+        this.gardenContentArray = data;
+      }
     );
   }
 
