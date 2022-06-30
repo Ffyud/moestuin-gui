@@ -1,5 +1,8 @@
 :root {
     --main-color: rgb(9, 67, 7);
+    --zaai-color: #ff5b29;
+    --grond-color: #ffa809;
+    --oogst-color: green;
 }
 
 body, html {
