@@ -1,17 +1,26 @@
 :root {
-    --main-color: rgb(9, 67, 7);
+    --main-bg: #E1FFD6;
+    --main-color: rgb(73, 155, 35);
     --zaai-color: #ff5b29;
     --grond-color: #ffa809;
     --oogst-color: green;
 }
 
 body, html {
-    background: #FFF;
+    background: var(--main-bg);
     color: var(--main-color);
     font-family: Arial,Helvetica,sans-serif;
     padding: 0px;
     margin: 0px;
     height: 100%;
+}
+
+.garden-wrap {
+    text-align: center;
+    color: rgb(9, 67, 7);
+    height: 100%;
+    max-width: 800px;
+    margin: 0px auto;
 }
 
 .bottom-modal {
@@ -20,10 +29,12 @@ body, html {
     z-index: 999;
     position: fixed;
     bottom: 0px;
-    width: calc(100% - 20px);
-    box-shadow: 0px 0px 10px 2px #000;
-    margin: 10px;
-    border-radius: 15px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0px 0px 0px 2px #316818;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transform: translate(calc(50vw - 50%));
 }
 
 @keyframes bottom-show {
@@ -33,20 +44,28 @@ body, html {
 
 .bottom-modal input[type=text] {
     border-radius: 8px;
+    font-size: 1em;
     outline: none;
     border: none;
-    padding: 10px;
-    margin: 10px;
-    width: calc(100% - 40px);
-    box-shadow: inset 0px 0px 0px 2px var(--main-color);
+    padding: 15px 15px 15px 15px;
+    margin: 10px 10px 0px 10px;
+    width: calc(100% - 50px);
+    box-shadow: inset 0px 0px 0px 2px #CCC;
 }
 .bottom-modal select {
-    background: #ececec;
+    background: #fff;
     border: none;
     padding: 15px;
+    font-size: 1em;
+    color: #666;
     border-radius: 8px;
+    display: inline-block;
+    width: calc(50% - 20px);
     margin: 10px 10px 0px 10px;
-    width: calc(100% - 20px);
+    box-shadow: inset 0px 0px 0px 2px #CCC;
+}
+.bottom-modal select.dimensionY {
+    display: inline-block;
 }
 
 .bottom-modal button {
@@ -55,6 +74,7 @@ body, html {
     border: none;
     background: var(--main-color);
     color: #FFF;
+    font-size: 1em;
     border-radius: 8px;
     padding: 10px;
     margin: 10px;
@@ -81,6 +101,7 @@ body, html {
     padding: 10px 15px 10px 15px;
     border-radius: 8px;
     font-weight: 300;
-    margin: 10px;
+    margin: 10px auto;
     display: block;
+    max-width: 200px;
 }
