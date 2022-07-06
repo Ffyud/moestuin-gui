@@ -59,16 +59,19 @@ export class MyGardenOverviewComponent implements OnInit {
   gardenId: number = 1; // FIXME hardcoded gardenId lol wut
   
   ngOnInit(): void {
-    this.gardenService.getGardenContent(this.gardenId)
-    .pipe(
-      // object simpeler maken?
-      distinct()
-    )
-    .subscribe(
-      data => { 
-        this.gardenContentArray = data;
-      }
-    );
+    this.getOverviewContent();
   }
 
+  private getOverviewContent() {
+    this.gardenService.getGardenContent(this.gardenId)
+      .pipe(
+        // object simpeler maken?
+        distinct()
+      )
+      .subscribe(
+        data => {
+          this.gardenContentArray = data;
+        }
+      );
+  }
 }
