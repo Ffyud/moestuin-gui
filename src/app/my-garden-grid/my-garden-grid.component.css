@@ -6,11 +6,11 @@
 }
 
 .garden-name {
-    background: #FFF;
     color: #000;
     display: block;
     padding: 0px 10px 0px 10px;
     font-size: 1.3em;
+    font-style: italic;
 }
 
 .garden ul {
@@ -34,7 +34,7 @@
     height: 90px;
     cursor: pointer;
     background: #FFF;
-    box-shadow: inset 0px 0px 0px 2px #000;
+    box-shadow: inset 0px 0px 0px 2px rgb(49, 104, 24);
     overflow: hidden;
 }
 

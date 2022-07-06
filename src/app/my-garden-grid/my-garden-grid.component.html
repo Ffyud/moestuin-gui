@@ -1,3 +1,4 @@
+<div class="garden-wrap">
 <span *ngIf="garden.name !== undefined" class="garden-name">{{ garden.name }}</span>
 <div class="garden">
     <ul *ngFor="let x of [].constructor(garden.dimensionX); let i = index">
@@ -11,6 +12,7 @@
             </div>
         </li>
     </ul>
+</div>
 </div>
 <app-my-garden-overview></app-my-garden-overview>
 <app-new-garden-content-form 
