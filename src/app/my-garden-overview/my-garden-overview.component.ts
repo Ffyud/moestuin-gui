@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { GardenService } from '../garden.service';
 import { GardenContent } from '../gardencontent';
 @Component({
@@ -7,6 +7,7 @@ import { GardenContent } from '../gardencontent';
   styleUrls: ['./my-garden-overview.component.css']
 })
 
+
 export class MyGardenOverviewComponent implements OnInit {
 
   gardenContentArray!: GardenContent[];
@@ -14,7 +15,6 @@ export class MyGardenOverviewComponent implements OnInit {
     "aug", "sep", "okt", "nov", "dec"];
 
   currentMonth: number = new Date().getMonth() + 1;
-  
   constructor(private gardenService: GardenService) { }
 
   getMonthActionSeed(seedPeriod: string, monthIndex: number) {
@@ -58,7 +58,7 @@ export class MyGardenOverviewComponent implements OnInit {
     this.getOverviewContent();
   }
 
-  private getOverviewContent() {
+  public getOverviewContent() {
     this.gardenService.getGardenContent(this.gardenId)
     .subscribe(
       data => {
@@ -71,8 +71,7 @@ export class MyGardenOverviewComponent implements OnInit {
           )
         )
         this.gardenContentArray = result;
-
-
+        console.log("Zaaikalender ophalen")
       }
     );
   }
