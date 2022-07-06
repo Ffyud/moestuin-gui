@@ -1,16 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { GardenService } from '../garden.service';
 import { GardenContent } from '../gardencontent';
-import { of, pipe } from 'rxjs';
-import { distinct } from 'rxjs/operators';
-import { Plant } from '../plant';
-import { PlantService } from '../plant.service';
-
 @Component({
   selector: 'app-my-garden-overview',
   templateUrl: './my-garden-overview.component.html',
   styleUrls: ['./my-garden-overview.component.css']
 })
+
 export class MyGardenOverviewComponent implements OnInit {
 
   gardenContentArray!: GardenContent[];
@@ -64,14 +60,20 @@ export class MyGardenOverviewComponent implements OnInit {
 
   private getOverviewContent() {
     this.gardenService.getGardenContent(this.gardenId)
-      .pipe(
-        // object simpeler maken?
-        distinct()
-      )
-      .subscribe(
-        data => {
-          this.gardenContentArray = data;
-        }
-      );
+    .subscribe(
+      data => {
+        this.gardenContentArray = data;
+        console.log(this.gardenContentArray);
+
+        const result = this.gardenContentArray.filter((thing, index, self) => 
+          index === self.findIndex((t) => (
+          t.plant.id === thing.plant.id)
+          )
+        )
+        this.gardenContentArray = result;
+
+
+      }
+    );
   }
 }
