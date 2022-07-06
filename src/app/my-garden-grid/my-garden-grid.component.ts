@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { GardenService } from '../garden.service';
 import { Garden } from '../garden';
 import { GardenContent } from '../gardencontent';
+import { MyGardenOverviewComponent } from '../my-garden-overview/my-garden-overview.component';
 
 @Component({
   selector: 'app-my-garden-grid',
@@ -9,6 +10,9 @@ import { GardenContent } from '../gardencontent';
   styleUrls: ['./my-garden-grid.component.css']
 })
 export class MyGardenGridComponent implements OnInit {
+
+  @ViewChild(MyGardenOverviewComponent)
+  child!: MyGardenOverviewComponent;
 
   garden!: Garden;
   gardenContentArray!: GardenContent[]; // FIXME het model gebruiken
@@ -48,6 +52,7 @@ export class MyGardenGridComponent implements OnInit {
   newGardenContentSubmitted() {
     this.isShowModalContent = true;
     this.getGardenAndGardenContent();
+    this.child.getOverviewContent();
   }
   
   ngOnInit(): void {
@@ -68,5 +73,6 @@ export class MyGardenGridComponent implements OnInit {
         this.gardenContentArray = data;
       }
     );
+    
   }
 }

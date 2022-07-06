@@ -8,13 +8,12 @@
                 <div *ngIf="getBlockPlantContent(i,z)?.icon !== null" class="plant-icon">
                     <img src='assets/svg/{{ getBlockPlantContent(i,z)?.icon }}.svg'/>
                 </div> 
-
             </div>
         </li>
     </ul>
 </div>
 </div>
-<app-my-garden-overview></app-my-garden-overview>
+<app-my-garden-overview #MyGardenOverviewComponent></app-my-garden-overview>
 <app-new-garden-content-form 
     [gridLocationX]="dimensionX"
     [gridLocationY]="dimensionY"
